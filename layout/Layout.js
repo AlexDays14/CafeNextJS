@@ -25,6 +25,7 @@ export default function Layout({children, pagina}) {
 
     const { modal, handleChangeModal } = useQuiosco()
 
+
     return (
 
         <>
@@ -38,7 +39,7 @@ export default function Layout({children, pagina}) {
                     <Sidebar/>
                 </aside>
 
-                <main className="md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen md:overflow-y-scroll scroll-smooth">
+                <main id='main' className="md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen md:overflow-y-scroll scroll-smooth">
                     <div className="p-10">
                         <Pasos/>
                         {children}

@@ -6,30 +6,33 @@ generator client {
 }
 
 datasource db {
-    provider = "postgres"
+    provider = "mongodb"
     url      = env("DATABASE_URL")
 }
 
 model Producto{
-    id Int @id @default(autoincrement())
+    id String @id @default(auto()) @map("_id") @db.ObjectId
     nombre String
     precio Float
     imagen String
     categoria Categoria @relation(fields: [categoriaId], references: [id])
-    categoriaId Int
+    categoriaId String @db.ObjectId
 }
 
 model Categoria{
-    id Int @id @default(autoincrement())
+    id String @id @default(auto()) @map("_id") @db.ObjectId
     nombre String
     icono String
     productos Producto[]
 }
 
 model Orden{
-    id Int @id @default(autoincrement())
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    email String
     nombre String
     fecha String
     total Float
     pedido Json
+    paymentIntent String
+    completada Boolean @default(false)
 }

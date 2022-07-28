@@ -9,8 +9,6 @@ const pasos = [
 
 const Pasos = () => {
 
-    const { handleChangePaso } = useQuiosco();
-
     const router = useRouter()
 
     const calcularProgreso = () =>{
@@ -33,14 +31,14 @@ const Pasos = () => {
 
     return (
         <>
-            <div className="flex justify-between mb-5">
+            <div className="flex gap-5 md:justify-between mb-5">
                 {pasos.map(paso => (
                     <button
                         onClick={() => {
-                            router.push(paso.url)
+                            router.push(paso.url + '#main')
                         }}
                         key={paso.paso}
-                        className="text-2xl font-bold"
+                        className={"text-2xl font-bold transition-colors" + (router.pathname === paso.url && " text-amber-500 hover:text-amber-700")}
                     >
                         {paso.nombre}
                     </button>

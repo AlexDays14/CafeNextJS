@@ -7,8 +7,8 @@ const ResumenProducto = ({producto}) => {
     const { handleEditarCantidades, handleEliminarProducto } = useQuiosco();
     const { id, nombre, cantidad, precio, imagen } = producto
     return (
-        <div className="shadow p-5 mb-3 flex gap-10 items-center">
-            <div className="md:w-1/6">
+        <div className="shadow p-5 mb-3 md:flex gap-10 items-center">
+            <div className="w-full md:w-1/6">
                 <Image 
                     width={300}
                     height={400}
@@ -17,7 +17,7 @@ const ResumenProducto = ({producto}) => {
                 />
             </div>
 
-            <div className="w-4/6">
+            <div className="mb-5 md:mb-0 md:w-4/6">
                 <p className="text-3xl font-bold">{nombre}</p>
                 <p className="text-xl font-bold mt-2">Cantidad: {cantidad}</p>
                 <p className="text-xl font-semibold text-amber-500 mt-4">Precio: {formatearDinero(precio)}</p>
@@ -27,7 +27,7 @@ const ResumenProducto = ({producto}) => {
             <div className="">
                 <button
                     type="button"
-                    className="bg-sky-700 hover:bg-sky-800 transition-all flex gap-2 px-5 py-2 text-white rounded-md font-bold uppercase shadow-md w-full text-center"
+                    className="bg-sky-700 hover:bg-sky-800 transition-all flex justify-center md:justify-start gap-2 px-5 py-2 text-white rounded-md font-bold uppercase shadow-md w-full text-center"
                     onClick={() => handleEditarCantidades(id)}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -38,7 +38,7 @@ const ResumenProducto = ({producto}) => {
 
                 <button
                     type="button"
-                    className="bg-red-700 hover:bg-red-800 transition-all mt-3 flex gap-2 px-5 py-2 text-white rounded-md font-bold uppercase shadow-md w-full text-center"
+                    className="bg-red-700 hover:bg-red-800 transition-all mt-3 flex justify-center md:justify-start gap-2 px-5 py-2 text-white rounded-md font-bold uppercase shadow-md w-full text-center"
                     onClick={() => handleEliminarProducto(id)}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

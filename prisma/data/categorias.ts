@@ -1,5 +1,5 @@
 const categorias = [
-    {
+      {
         icono: "cafe",
         nombre: "Café"
       },
