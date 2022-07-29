@@ -14,7 +14,7 @@ const Sidebar = () => {
                 alt='Imagen Logotipo'
             />
 
-            <nav className='mt-10'>
+            <nav className='mt-10 flex md:block overflow-scroll md:overflow-auto'>
                 {categorias.map(categoria => (
                     <Categoria 
                         key={categoria.id}

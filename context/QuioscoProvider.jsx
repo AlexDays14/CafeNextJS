@@ -150,7 +150,14 @@ const QuioscoProvider = ({children}) => {
     }
 
     const appearance = {
-        theme: 'stripe',
+        theme: 'flat',
+        variables: {
+            colorPrimary: '#000000',
+            colorBackground: '#ffffff',
+            colorText: '#30313d',
+            colorDanger: '#df1b41',
+            // See all possible variables below
+          }
       };
       const options = {
         clientSecret,
